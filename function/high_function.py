@@ -35,11 +35,27 @@ print u'map(函数，计算值) 与 reduce(函数, 计算值)'
 
 print u'map练习题网络答案:'
 def normalize(s):
+	if not isinstance(s, str):
+		raise TypeError('input is not string')
+	if len(s) < 2:
+		raise TypeError('The name is too short')
 	return (s[0].upper() + s[1:].lower())
 
-print normalize('adaM')
+print normalize('barT')
 print map(normalize, oldNameList)
 
 def ss(s1):
 	return s1[0].upper() + "ss" + s1[1:].lower()
 print map(ss, oldNameList)
+
+print u'filter()练习题:'
+print u'请尝试用filter()删除1~100的素数。'
+def prime(num):
+	result, n = True, 2
+	while (n < num):
+		if(num % n == 0):
+			result = False
+		n = n + 1
+	return result
+
+print filter(prime, range(1,101))
