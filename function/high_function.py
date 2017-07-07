@@ -59,3 +59,16 @@ def prime(num):
 	return result
 
 print filter(prime, range(1,101))
+
+print u'sorted()函数使用:'
+def revered_cmp(x, y):
+	if (x < y):
+		return 1
+	elif (x > y):
+		return -1
+	else:
+		return 0
+
+sort_number_list = [36,25,14,96,42]
+print sorted(sort_number_list, reversed_cmp)
+print sorted(sort_number_list)
